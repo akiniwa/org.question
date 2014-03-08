@@ -9,15 +9,31 @@ package org.dom;
 
 public final class R {
     public static final class animator {
-        public static final int slide_in_right=0x7f030000;
-        public static final int slide_out_left=0x7f030001;
+        public static final int slide_in_right=0x7f040000;
+        public static final int slide_out_left=0x7f040001;
     }
     public static final class attr {
     }
+    public static final class color {
+        public static final int black=0x7f050007;
+        public static final int blue=0x7f050004;
+        public static final int chocolate=0x7f050001;
+        public static final int darkgray=0x7f050008;
+        public static final int green=0x7f050003;
+        public static final int lightgray=0x7f050009;
+        public static final int olive=0x7f050000;
+        public static final int red=0x7f050002;
+        public static final int skyblue=0x7f050005;
+        public static final int white=0x7f050006;
+    }
+    public static final class drawable {
+        public static final int button=0x7f020000;
+        public static final int shape=0x7f020001;
+    }
     public static final class layout {
-        public static final int main=0x7f020000;
+        public static final int main=0x7f030000;
     }
     public static final class string {
-        public static final int app_name=0x7f040000;
+        public static final int app_name=0x7f060000;
     }
 }

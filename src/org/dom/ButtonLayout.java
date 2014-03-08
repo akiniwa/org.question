@@ -10,33 +10,39 @@ public class ButtonLayout extends LinearLayout {
     public Button next_button;
     public Button back_button;
 
-  public ButtonLayout(Context context) {
-    super(context);
+    public ButtonLayout(Context context) {
+        super(context);
 
-    this.setOrientation(this.VERTICAL);
-    this.setBackgroundColor(0xDDA0DDEE);
-    this.setLayoutParams(new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.FILL_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT));
+        /* layout setting */
+        this.setOrientation(this.VERTICAL);
+        this.setBackgroundColor(0xDDA0DDEE);
+        this.setLayoutParams(new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.FILL_PARENT,
+                    80));
+        this.setPadding(5, 5, 5, 5);
 
-    back_button = new Button(context);
-    back_button.setLayoutParams(new SelectLayout.LayoutParams(
-                LinearLayout.LayoutParams.WRAP_CONTENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT));
-    back_button.setText("back");
-    back_button.setTextSize(TypedValue.COMPLEX_UNIT_SP, 21);
+        /* parentlayout */
+        LinearLayout parentLayout = new LinearLayout(context);
+        parentLayout.setOrientation(LinearLayout.HORIZONTAL);
 
-    next_button = new Button(context);
-    next_button.setLayoutParams(new SelectLayout.LayoutParams(
-                LinearLayout.LayoutParams.WRAP_CONTENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT));
-    next_button.setText("next");
+        /* create views */
+        back_button = new Button(context);
+        LayoutParams backParams = new LayoutParams(100, 70);
+        backParams.setMargins(1000, 5, 5, 5);
+        back_button.setLayoutParams(backParams);
+        back_button.setText("back");
+        back_button.setTextSize(TypedValue.COMPLEX_UNIT_SP, 21);
 
-    LinearLayout parentLayout = new LinearLayout(context);
-    parentLayout.setOrientation(LinearLayout.HORIZONTAL);
+        next_button = new Button(context);
+        LayoutParams nextParams = new LayoutParams(100, 70);
+        nextParams.setMargins(5, 5, 5, 5);
+        next_button.setLayoutParams(nextParams);
+        next_button.setText("next");
+        next_button.setTextSize(TypedValue.COMPLEX_UNIT_SP, 21);
 
-    parentLayout.addView(back_button);
-    parentLayout.addView(next_button);
-    this.addView(parentLayout);
-  }
+        /* add views to parentlayout */
+        parentLayout.addView(back_button);
+        parentLayout.addView(next_button);
+        this.addView(parentLayout);
+    }
 }

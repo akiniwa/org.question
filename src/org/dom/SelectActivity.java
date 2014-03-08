@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.content.Intent;
 import android.util.Log;
 import android.widget.Toast;
+import android.graphics.Color;
 
 public class SelectActivity extends Activity
 {
@@ -19,17 +20,14 @@ public class SelectActivity extends Activity
         super.onCreate(savedInstanceState);
 
         Intent i = getIntent();
-        final int keyword = i.getIntExtra("COUNT", 0);
+        final int pageNumber = i.getIntExtra("COUNT", 0);
 
         LinearLayout parentLayout = new LinearLayout(this);
+        parentLayout.setBackgroundColor(0xDFA9DDEE);
         parentLayout.setOrientation(LinearLayout.VERTICAL);
 
-        HeaderLayout headerLayout = new HeaderLayout(this, keyword);
-
-        SelectLayout selectLayout = new SelectLayout(this, keyword);
-        /*
-         * buttonlayout
-         */
+        HeaderLayout headerLayout = new HeaderLayout(this, pageNumber);
+        SelectLayout selectLayout = new SelectLayout(this, 4);
         ButtonLayout buttonLayout = new ButtonLayout(this);
         
         buttonLayout.next_button.setOnClickListener(new View.OnClickListener() {
@@ -38,7 +36,7 @@ public class SelectActivity extends Activity
                 Intent intent = new Intent(SelectActivity.this, SelectActivity.class);
                 intent.putExtra(
                     "COUNT",
-                    keyword+1);
+                    pageNumber+1);
                 startActivity(intent); 
                 overridePendingTransition(R.animator.slide_in_right, R.animator.slide_out_left);
             }

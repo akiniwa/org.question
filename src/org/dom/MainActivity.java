@@ -9,6 +9,8 @@ import android.widget.ScrollView;
 import android.widget.Button;
 import android.content.Intent;
 import android.util.Log;
+import android.graphics.Color;
+import android.view.Window;
 
 public class MainActivity extends Activity
 {
@@ -23,6 +25,7 @@ public class MainActivity extends Activity
 
 		TextView textView = new TextView(this);
 		textView.setText("select");
+        textView.setTextColor(Color.rgb(200,0,0));
 		linearLayout.addView(textView);
 
         Button btn = new Button(this);

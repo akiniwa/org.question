@@ -1,6 +1,6 @@
-# view AndroidManifest.xml #generated:7
+# view AndroidManifest.xml #generated:10
 -keep class org.dom.MainActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:15
+# view AndroidManifest.xml #generated:19
 -keep class org.dom.SelectActivity { <init>(...); }
 
