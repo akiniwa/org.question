@@ -28,5 +28,5 @@ adb shell am start -a android.intent.action.MAIN -n ${PACKAGE}/.${MAIN_ACTIVITY}
 echo "[OK]"
 echo "Start logging"
 echo "Type \`tail -f ${LOGCAT_LOG}' for surveillance of log."
-adb logcat -v time >> ${LOGCAT_LOG}
+adb logcat -v time E >> ${LOGCAT_LOG}
 

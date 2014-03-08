@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Button;
+import android.content.Intent;
+import android.util.Log;
 
 public class MainActivity extends Activity
 {
@@ -17,6 +19,7 @@ public class MainActivity extends Activity
 
 		LinearLayout linearLayout = new LinearLayout(this);
 		linearLayout.setOrientation(LinearLayout.VERTICAL);
+        linearLayout.setBackgroundColor(0xFF00FF00);
 
 		TextView textView = new TextView(this);
 		textView.setText("select");
@@ -31,17 +34,13 @@ public class MainActivity extends Activity
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Button button = (Button)v;
-                //      Intent intent = new Intent(MainActivity.this, SelectActivity.class);
-                //startActivity(intent);
-                button.setText("hello");
-                /*  
-                    Toast.makeText(
-                    MainActivity.this, 
-                    button.getText(),
-                    Toast.LENGTH_SHORT).show();
-                    */
-            }
+                Intent intent = new Intent(MainActivity.this, SelectActivity.class);
+                intent.putExtra(
+                    "COUNT",
+                    1);
+                startActivity(intent);
+                overridePendingTransition(R.animator.slide_in_right, R.animator.slide_out_left);
+           }
         });
 
         linearLayout.addView(btn);
