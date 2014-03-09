@@ -30,6 +30,11 @@ public final class R {
         public static final int button=0x7f020000;
         public static final int shape=0x7f020001;
     }
+    public static final class id {
+        public static final int base_layout=0x7f070000;
+        public static final int btn=0x7f070002;
+        public static final int select_textview=0x7f070001;
+    }
     public static final class layout {
         public static final int main=0x7f030000;
     }

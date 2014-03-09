@@ -18,22 +18,9 @@ public class MainActivity extends Activity
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
 
-		LinearLayout linearLayout = new LinearLayout(this);
-		linearLayout.setOrientation(LinearLayout.VERTICAL);
-        linearLayout.setBackgroundColor(0xFF00FF00);
-
-		TextView textView = new TextView(this);
-		textView.setText("select");
-        textView.setTextColor(Color.rgb(200,0,0));
-		linearLayout.addView(textView);
-
-        Button btn = new Button(this);
-        btn.setLayoutParams(new LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.WRAP_CONTENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT));
-        btn.setText("btn");
-
+        Button btn = (Button)findViewById(R.id.btn);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,8 +33,5 @@ public class MainActivity extends Activity
            }
         });
 
-        linearLayout.addView(btn);
-
-		this.setContentView(linearLayout);
    }
 }

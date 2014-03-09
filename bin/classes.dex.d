@@ -8,6 +8,7 @@
 /Users/shinya/Documents/workspace/org.question/bin/classes/org/dom/R$attr.class \
 /Users/shinya/Documents/workspace/org.question/bin/classes/org/dom/R$color.class \
 /Users/shinya/Documents/workspace/org.question/bin/classes/org/dom/R$drawable.class \
+/Users/shinya/Documents/workspace/org.question/bin/classes/org/dom/R$id.class \
 /Users/shinya/Documents/workspace/org.question/bin/classes/org/dom/R$layout.class \
 /Users/shinya/Documents/workspace/org.question/bin/classes/org/dom/R$string.class \
 /Users/shinya/Documents/workspace/org.question/bin/classes/org/dom/R.class \
