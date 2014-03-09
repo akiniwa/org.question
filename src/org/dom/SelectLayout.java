@@ -6,51 +6,24 @@ import android.content.Context;
 import android.graphics.Color;
 import android.widget.Button;
 import android.util.TypedValue;
+import android.view.LayoutInflater;
 
 public class SelectLayout extends LinearLayout {
 
-    public SelectLayout(Context context, int textNumber) {
+    public SelectLayout(Context context, int textNumber, int pageNumber) {
         super(context);
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        inflater.inflate(R.layout.select_layout, this, true);
 
-        /* layout setting */
-        this.setOrientation(this.VERTICAL);
-        this.setBackgroundColor(Color.rgb(255, 255, 255));
-        this.setLayoutParams(new LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.FILL_PARENT,
-                    600));
-        this.setPadding(20, 20, 20, 20);
-
-        /* parentlayout */
-        LinearLayout parentLayout = new LinearLayout(context);
-        parentLayout.setOrientation(LinearLayout.VERTICAL);
-        parentLayout.setLayoutParams(new LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.FILL_PARENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT));
- 
         /* create views */
-        TextView textView = new TextView(context);
-        textView.setText("It causes the Button to disappear from the screen. What am I doing wrong, and what is the correct way to change the background color on any View?");
+        TextView textView = (TextView)findViewById(R.id.select_textview);
+        textView.setText(pageNumber + ". It causes the Button to disappear from the screen. What am I doing wrong, and what is the correct way to change the background color on any View?");
         textView.setTextColor(Color.rgb(20,20,20));
-        textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 22);
-        LayoutParams textParams = new LayoutParams(
-                    LinearLayout.LayoutParams.FILL_PARENT,
-                    220);
-        textParams.setMargins(100, 100, 100, 0);
-        textView.setLayoutParams(textParams);
 
-        LinearLayout buttonsLayout = new LinearLayout(context);
-        buttonsLayout.setOrientation(LinearLayout.HORIZONTAL);
-        buttonsLayout.setLayoutParams(new LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.FILL_PARENT,
-                    50));
-
-        LinearLayout answersLayout = new LinearLayout(context);
-        answersLayout.setOrientation(LinearLayout.HORIZONTAL);
-        answersLayout.setLayoutParams(new LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.FILL_PARENT,
-                    50));
+        LinearLayout buttonsLayout = (LinearLayout)findViewById(R.id.select_button_layout);
+        LinearLayout answersLayout = (LinearLayout)findViewById(R.id.select_answer_layout);
  
-                /* buttons, answers */
+        /* buttons, answers */
         Button[] buttons = new Button[textNumber];
         TextView[] answers = new TextView[textNumber];
 
@@ -75,12 +48,6 @@ public class SelectLayout extends LinearLayout {
             answers[i].setLayoutParams(params);
             answersLayout.addView(answers[i]);
        }
-
-        /* add views to parentlayout */
-        parentLayout.addView(textView);
-        parentLayout.addView(buttonsLayout);
-        parentLayout.addView(answersLayout);
-        this.addView(parentLayout);
     }
 
     public void manageButton() {

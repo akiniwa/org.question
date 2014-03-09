@@ -1,21 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/base_layout"
+    android:id="@+id/select_layout"
+    android:background="@color/white"
     android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_height="600dp"
+    android:padding="20dp"
     >
-
-    <TextView  
-    android:id="@+id/select_textview"
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" 
-    android:text="Seliict"
-    />
-    <Button 
-        android:id="@+id/btn"
-        android:text="butttton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-     />
+       <TextView 
+            android:id="@+id/select_textview"
+            android:layout_width="fill_parent" 
+            android:layout_height="220dp" 
+            android:text="hell"
+            android:textSize="22sp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginRight="50dp"
+            />
+        <LinearLayout
+            android:id="@+id/select_button_layout"
+            android:layout_height="50dp"
+            android:layout_width="fill_parent"
+            android:orientation="horizontal"
+            />
+        <LinearLayout
+            android:id="@+id/select_answer_layout"
+            android:layout_height="50dp"
+            android:layout_width="fill_parent"
+            android:orientation="horizontal"
+            />
 </LinearLayout>

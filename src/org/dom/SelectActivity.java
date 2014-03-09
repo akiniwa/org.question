@@ -27,7 +27,7 @@ public class SelectActivity extends Activity
         parentLayout.setOrientation(LinearLayout.VERTICAL);
 
         HeaderLayout headerLayout = new HeaderLayout(this, pageNumber);
-        SelectLayout selectLayout = new SelectLayout(this, 4);
+        SelectLayout selectLayout = new SelectLayout(this, 4, pageNumber);
         ButtonLayout buttonLayout = new ButtonLayout(this);
         
         buttonLayout.next_button.setOnClickListener(new View.OnClickListener() {
