@@ -14,11 +14,18 @@ import android.view.Window;
 
 public class MainActivity extends Activity
 {
+    private void setGlobals() {
+        Globals globals = (Globals) this.getApplication();
+        globals.GlobalsAllInit();
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+
+        this.setGlobals();
 
         Button btn = (Button)findViewById(R.id.main_btn);
         btn.setOnClickListener(new View.OnClickListener() {

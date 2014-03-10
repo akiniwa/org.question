@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="org.dom"
-      android:versionCode="1"
-      android:versionName="1.0">
-      <uses-sdk 
-          android:minSdkVersion="8"
-          android:targetSdkVersion="17"/>
-          <application android:label="@string/app_name" >
-        <activity android:name="MainActivity"
+    package="org.dom"
+    android:versionCode="1"
+    android:versionName="1.0">
+    <uses-sdk 
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17"/>
+    <application android:label="@string/app_name" 
+        android:name="Globals">
+        <activity android:name=".MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
@@ -17,10 +18,11 @@
             </intent-filter>
         </activity>
         <activity 
-            android:name="SelectActivity"
+            android:name=".SelectActivity"
             android:label="@string/app_name"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
-       </activity>
-     </application>
+        </activity>
+        <activity android:name="au.com.bytecode.opencsv"></activity>
+    </application>
 </manifest> 

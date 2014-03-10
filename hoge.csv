@@ -1,6 +1,6 @@
-id,name
-1,hello
-2,dk
-3,dkdk
-4,kdk
-5,dom
+Agree,Somewhat agree,Somewhat disagree,Disagree
+1,Agree,d,d
+2,Somewhat agree,d,d
+3,Somewhat disagree,d,d
+4,Disagree,d,d
+5,dom,d,d

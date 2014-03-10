@@ -14,13 +14,18 @@ import android.graphics.Color;
 
 public class SelectActivity extends Activity
 {
+    int page;
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
 
+        //Globals globals = (Globals) this.getApplication();
+
         Intent i = getIntent();
         final int pageNumber = i.getIntExtra("COUNT", 0);
+
+        page = ((Globals) this.getApplication()).getPage();
 
         LinearLayout parentLayout = new LinearLayout(this);
         parentLayout.setBackgroundColor(0xDFA9DDEE);
@@ -36,7 +41,7 @@ public class SelectActivity extends Activity
                 Intent intent = new Intent(SelectActivity.this, SelectActivity.class);
                 intent.putExtra(
                     "COUNT",
-                    pageNumber+1);
+                     page);
                 startActivity(intent); 
                 overridePendingTransition(R.animator.slide_in_right, R.animator.slide_out_left);
             }

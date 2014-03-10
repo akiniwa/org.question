@@ -33,19 +33,23 @@ public class SelectLayout extends LinearLayout {
             buttons[i].setText(""+i);
             buttons[i].setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
             buttons[i].setBackgroundResource(R.drawable.shape);
-            LayoutParams params = new LayoutParams(40, 40);
-            params.setMargins(200, 0, 0, 0);
-            buttons[i].setLayoutParams(params);
+            LayoutParams buttonParams = new LayoutParams(40, 40);
+            buttonParams.setMargins(200, 0, 0, 0);
+            buttons[i].setLayoutParams(buttonParams);
             if (i==1) {
                 buttons[i].setPressed(true);
             }
             buttonsLayout.addView(buttons[i]);
             
             answers[i] = new TextView(context);
-            answers[i].setText("hoge");
-            answers[i].setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
+            answers[i].setText("hh");
+            answers[i].setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
             answers[i].setTextColor(Color.rgb(20,20,20));
-            answers[i].setLayoutParams(params);
+            LayoutParams answerParams = new LayoutParams(240, 40);
+            if (i==0) {
+                answerParams.setMargins(200, 0, 0, 0);
+            }
+            answers[i].setLayoutParams(answerParams);
             answersLayout.addView(answers[i]);
        }
     }

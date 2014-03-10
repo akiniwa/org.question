@@ -54,7 +54,6 @@ Buildfile: /Users/shinya/Documents/workspace/org.question/build.xml
      [echo] ----------
      [echo] Handling Resources...
      [aapt] Generating resource IDs...
-     [aapt]     (skipping file '.select_layout.xml.swp' due to ANDROID_AAPT_IGNORE pattern '.*')
      [echo] ----------
      [echo] Handling BuildConfig class...
 [buildconfig] Generating BuildConfig class.
@@ -62,47 +61,13 @@ Buildfile: /Users/shinya/Documents/workspace/org.question/build.xml
 -pre-compile:
 
 -compile:
-    [javac] Compiling 7 source files to /Users/shinya/Documents/workspace/org.question/bin/classes
-
--post-compile:
-
--obfuscate:
-
--dex:
-      [dex] input: /Users/shinya/Documents/workspace/org.question/bin/classes
-      [dex] input: /Applications/adt-bundle-mac-x86_64/sdk/tools/support/annotations.jar
-      [dex] Pre-Dexing /Applications/adt-bundle-mac-x86_64/sdk/tools/support/annotations.jar -> annotations-954990bd200f0ae9cfdf8ebe0c8a7ae0.jar
-      [dex] Converting compiled files and external libraries into /Users/shinya/Documents/workspace/org.question/bin/classes.dex...
-       [dx] Merged dex A (16 defs/8.0KiB) with dex B (2 defs/1.1KiB). Result is 18 defs/9.8KiB. Took 0.0s
-
--crunch:
-   [crunch] Crunching PNG Files in source dir: /Users/shinya/Documents/workspace/org.question/res
-   [crunch] To destination dir: /Users/shinya/Documents/workspace/org.question/bin/res
-   [crunch] Processing image to cache: /Users/shinya/Documents/workspace/org.question/res/drawable/button.png => /Users/shinya/Documents/workspace/org.question/bin/res/drawable/button.png
-   [crunch]   (processed image to cache entry /Users/shinya/Documents/workspace/org.question/bin/res/drawable/button.png: 79% size of source)
-   [crunch] Crunched 1 PNG files to update cache
-
--package-resources:
-     [aapt] Creating full resource package...
-     [aapt]     (skipping file '.select_layout.xml.swp' due to ANDROID_AAPT_IGNORE pattern '.*')
-
--package:
-[apkbuilder] Current build type is different than previous build: forced apkbuilder run.
-[apkbuilder] Creating questionnaire-debug-unaligned.apk and signing it with a debug key...
-
--post-package:
-
--do-debug:
- [zipalign] Running zip align on final apk...
-     [echo] Debug Package: /Users/shinya/Documents/workspace/org.question/bin/questionnaire-debug.apk
-[propertyfile] Creating new property file: /Users/shinya/Documents/workspace/org.question/bin/build.prop
-[propertyfile] Updating property file: /Users/shinya/Documents/workspace/org.question/bin/build.prop
-[propertyfile] Updating property file: /Users/shinya/Documents/workspace/org.question/bin/build.prop
-[propertyfile] Updating property file: /Users/shinya/Documents/workspace/org.question/bin/build.prop
-
--post-build:
-
-debug:
-
-BUILD SUCCESSFUL
-Total time: 3 seconds
+    [javac] Compiling 13 source files to /Users/shinya/Documents/workspace/org.question/bin/classes
+    [javac] /Users/shinya/Documents/workspace/org.question/src/org/dom/Globals.java:22: 配列が要求されましたが、java.util.ArrayList<java.lang.String> が見つかりました。
+    [javac]         return questions[currentPage];
+    [javac]                         ^
+    [javac] /Users/shinya/Documents/workspace/org.question/src/org/dom/Globals.java:39: 互換性のない型
+    [javac] 検出値  : java.util.List<java.lang.String[]>
+    [javac] 期待値  : java.util.ArrayList<java.lang.String>
+    [javac]             questions = reader.readAll();
+    [javac]                                       ^
+    [javac] エラー 2 個
