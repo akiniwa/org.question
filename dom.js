@@ -5,7 +5,7 @@
         {
             file:"one question",
             answer:"hoge.csv",
-            questions:"dom.csv"
+            questions:"questions.csv"
         },
         {
             file:"next",

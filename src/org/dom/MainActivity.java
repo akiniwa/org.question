@@ -14,8 +14,9 @@ import android.view.Window;
 
 public class MainActivity extends Activity
 {
+    Globals globals;
     private void setGlobals() {
-        Globals globals = (Globals) this.getApplication();
+        globals = (Globals) this.getApplication();
         globals.GlobalsAllInit();
     }
 
@@ -31,10 +32,8 @@ public class MainActivity extends Activity
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                globals.nextPage();
                 Intent intent = new Intent(MainActivity.this, SelectActivity.class);
-                intent.putExtra(
-                    "COUNT",
-                    1);
                 startActivity(intent);
                 overridePendingTransition(R.animator.slide_in_right, R.animator.slide_out_left);
            }

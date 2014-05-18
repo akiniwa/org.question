@@ -11,39 +11,58 @@ import android.content.Intent;
 import android.util.Log;
 import android.widget.Toast;
 import android.graphics.Color;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 
 public class SelectActivity extends Activity
 {
+    Globals globals;
     int page;
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
 
-        //Globals globals = (Globals) this.getApplication();
-
-        Intent i = getIntent();
-        final int pageNumber = i.getIntExtra("COUNT", 0);
-
-        page = ((Globals) this.getApplication()).getPage();
+        globals = (Globals) this.getApplication();
 
         LinearLayout parentLayout = new LinearLayout(this);
         parentLayout.setBackgroundColor(0xDFA9DDEE);
         parentLayout.setOrientation(LinearLayout.VERTICAL);
 
-        HeaderLayout headerLayout = new HeaderLayout(this, pageNumber);
-        SelectLayout selectLayout = new SelectLayout(this, 4, pageNumber);
+        HeaderLayout headerLayout = new HeaderLayout(this, globals.getPage());
+        Log.d("num", ""+ globals.getNumbers());
+        
+        SelectLayout selectLayout = new SelectLayout(this, globals.getAnswers(), globals.getQuestion(), globals.getPage(), globals.getNumbers());
         ButtonLayout buttonLayout = new ButtonLayout(this);
         
         buttonLayout.next_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SelectActivity.this, SelectActivity.class);
-                intent.putExtra(
-                    "COUNT",
-                     page);
+                globals.setNumbers(2);
+                globals.nextPage();
+
                 startActivity(intent); 
                 overridePendingTransition(R.animator.slide_in_right, R.animator.slide_out_left);
+            }
+        });
+
+        buttonLayout.back_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SelectActivity.this, SelectActivity.class);
+                if (globals.getPage()==1) {
+                    AlertDialog alertDialog = new AlertDialog.Builder(SelectActivity.this).create();
+                    alertDialog.setTitle("最初のページです。");
+                    alertDialog.setMessage("なにか画面をタッチしてください。");
+                    alertDialog.show();
+                } else {
+                    globals.setNumbers(2);
+                    globals.backPage();
+
+                     startActivity(intent); 
+                    overridePendingTransition(R.animator.slide_in_right, R.animator.slide_out_left);
+                }
             }
         });
 
@@ -51,6 +70,6 @@ public class SelectActivity extends Activity
         parentLayout.addView(selectLayout);
         parentLayout.addView(buttonLayout);
 
-		this.setContentView(parentLayout);
-   }
+        this.setContentView(parentLayout);
+    }
 }
