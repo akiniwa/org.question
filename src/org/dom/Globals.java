@@ -45,6 +45,11 @@ public class Globals extends Application {
         return answers;
     }
 
+    public int getTotalPage() {
+        // 1行目はタイトルだから-1する
+        return questions.size() - 1;
+    }
+
     public void GlobalsAllInit() {
         currentPage = 0;
 
@@ -59,8 +64,10 @@ public class Globals extends Application {
             while ((next = reader.readNext()) != null) {
                 answers.add(next[0]);
             }
-            numbers = new int[answers.size()];
-
+            numbers = new int[answers.size()-1];
+            for (int i=0;i<numbers.length;i++) {
+                numbers[i] = -1;
+            }
         } catch (IOException e) {
             // error
         } finally {

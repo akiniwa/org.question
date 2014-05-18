@@ -11,14 +11,18 @@ import android.view.LayoutInflater;
 import java.util.*;
 import android.util.Log;
 import android.view.MotionEvent;
+import java.lang.Integer;
+
 
 public class SelectLayout extends LinearLayout {
     public Button[] buttons;
     //private void getAllButtonOff();
+    Globals globals;
 
-    public SelectLayout(Context context, ArrayList<String> answers, String text, int pageNumber, int ans_num) {
+    public SelectLayout(Context context, ArrayList<String> answers, String text, int pageNumber, int ans_num, Globals g) {
         super(context);
         //this.answers = answers;
+        this.globals = g;
 
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.select_layout, this, true);
@@ -58,6 +62,7 @@ public class SelectLayout extends LinearLayout {
                         buttons[i].setPressed(false);
                     }
                     Button b = (Button)v;
+                    globals.setNumbers(Integer.parseInt(b.getText().toString()));
                     b.setPressed(true);
                     return true;
                 }
