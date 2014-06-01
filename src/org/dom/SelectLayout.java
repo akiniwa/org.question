@@ -16,20 +16,21 @@ import java.lang.Integer;
 
 public class SelectLayout extends LinearLayout {
     public Button[] buttons;
-    //private void getAllButtonOff();
     Globals globals;
 
-    public SelectLayout(Context context, ArrayList<String> answers, String text, int pageNumber, int ans_num, Globals g) {
+    public SelectLayout(Context context, Globals g) {
         super(context);
-        //this.answers = answers;
+
         this.globals = g;
+        ArrayList<String> answers = globals.getAnswers();
 
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.select_layout, this, true);
 
         /* create views */
         TextView textView = (TextView)findViewById(R.id.select_textview);
-        textView.setText(pageNumber + ". " + text);
+        textView.setText(globals.getPage() + ". " + globals.getQuestion());
+        textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 30);
         textView.setTextColor(Color.rgb(20,20,20));
 
         LinearLayout buttonsLayout = (LinearLayout)findViewById(R.id.select_button_layout);
@@ -42,10 +43,10 @@ public class SelectLayout extends LinearLayout {
         int i = 0;
         for (i = 0; i < answers.size(); i++) {
             buttons[i] = new Button(context);
-            buttons[i].setText(""+i);
+            buttons[i].setText(""+(i+1));
             buttons[i].setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
             buttons[i].setBackgroundResource(R.drawable.shape);
-            if (i==ans_num) {
+            if (i==globals.getNumbers()) {
                 buttons[i].setPressed(true);
             }
 
@@ -62,7 +63,7 @@ public class SelectLayout extends LinearLayout {
                         buttons[i].setPressed(false);
                     }
                     Button b = (Button)v;
-                    globals.setNumbers(Integer.parseInt(b.getText().toString()));
+                    globals.setNumbers(Integer.parseInt(b.getText().toString())-1);
                     b.setPressed(true);
                     return true;
                 }
@@ -72,13 +73,11 @@ public class SelectLayout extends LinearLayout {
             buttonParams.setMargins(200, 0, 0, 0);
             buttons[i].setLayoutParams(buttonParams);
             buttonsLayout.addView(buttons[i]);
-            //mizuho 四号　普通　1630595 株式会社くれ
 
-            //32392\
-            
             answersView[i] = new TextView(context);
             answersView[i].setText(answers.get(i));
-            answersView[i].setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
+            // テキストのフォントサイズ
+            answersView[i].setTextSize(TypedValue.COMPLEX_UNIT_SP, 22);
             answersView[i].setTextColor(Color.rgb(20,20,20));
             LayoutParams answerParams = new LayoutParams(240, 40);
             if (i==0) {

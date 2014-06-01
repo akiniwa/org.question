@@ -29,21 +29,27 @@ public class SelectActivity extends Activity
         parentLayout.setBackgroundColor(0xDFA9DDEE);
         parentLayout.setOrientation(LinearLayout.VERTICAL);
 
-        HeaderLayout headerLayout = new HeaderLayout(this, globals.getPage(), globals.getTotalPage());
-        Log.d("num", ""+ globals.getNumbers());
-        
-        SelectLayout selectLayout = new SelectLayout(this, globals.getAnswers(), globals.getQuestion(), globals.getPage(), globals.getNumbers(), globals);
+        // Add header, selectView, buttons to mainlayer
+        HeaderLayout headerLayout = new HeaderLayout(this, globals);
+        SelectLayout selectLayout = new SelectLayout(this, globals);
         ButtonLayout buttonLayout = new ButtonLayout(this);
         
         buttonLayout.next_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (globals.getNumbers()==-1) {
+                    // not filled
                     AlertDialog alertDialog = new AlertDialog.Builder(SelectActivity.this).create();
-                    alertDialog.setTitle("Not filled");
-                    alertDialog.setMessage(" +"+ globals.getNumbers());
+                    alertDialog.setTitle("未記入です。");
+                    alertDialog.setMessage(" 画面をタッチしてください ");
                     alertDialog.show();
+                } else if (globals.getPage()==globals.getTotalPage()) {
+                    // last page
+                    Intent intent = new Intent(SelectActivity.this, Confirmation.class);
+                    startActivity(intent); 
+                    overridePendingTransition(R.animator.slide_in_right, R.animator.slide_out_left);
                 } else {
+                    // nextpage
                     Intent intent = new Intent(SelectActivity.this, SelectActivity.class);
                     globals.nextPage();
 
@@ -58,8 +64,8 @@ public class SelectActivity extends Activity
             public void onClick(View v) {
                 if (globals.getPage()==1) {
                     AlertDialog alertDialog = new AlertDialog.Builder(SelectActivity.this).create();
-                    alertDialog.setTitle("$B:G=i$N%Z!<%8$G$9!#(B");
-                    alertDialog.setMessage("$B$J$K$+2hLL$r%?%C%A$7$F$/$@$5$$!#(B");
+                    alertDialog.setTitle("最初のページです。");
+                    alertDialog.setMessage("なにか画面をタッチしてください。");
                     alertDialog.show();
                 } else {
                     Intent intent = new Intent(SelectActivity.this, SelectActivity.class);

@@ -61,7 +61,7 @@ Buildfile: /Users/shinya/Documents/workspace/org.question/build.xml
 -pre-compile:
 
 -compile:
-    [javac] Compiling 13 source files to /Users/shinya/Documents/workspace/org.question/bin/classes
+    [javac] Compiling 117 source files to /Users/shinya/Documents/workspace/org.question/bin/classes
 
 -post-compile:
 
@@ -72,7 +72,7 @@ Buildfile: /Users/shinya/Documents/workspace/org.question/build.xml
       [dex] input: /Applications/adt-bundle-mac-x86_64/sdk/tools/support/annotations.jar
       [dex] Pre-Dexing /Applications/adt-bundle-mac-x86_64/sdk/tools/support/annotations.jar -> annotations-954990bd200f0ae9cfdf8ebe0c8a7ae0.jar
       [dex] Converting compiled files and external libraries into /Users/shinya/Documents/workspace/org.question/bin/classes.dex...
-       [dx] Merged dex A (24 defs/24.3KiB) with dex B (2 defs/1.1KiB). Result is 26 defs/29.3KiB. Took 0.1s
+       [dx] Merged dex A (137 defs/202.9KiB) with dex B (2 defs/1.1KiB). Result is 139 defs/251.7KiB. Took 0.3s
 
 -crunch:
    [crunch] Crunching PNG Files in source dir: /Users/shinya/Documents/workspace/org.question/res
@@ -103,4 +103,4 @@ Buildfile: /Users/shinya/Documents/workspace/org.question/build.xml
 debug:
 
 BUILD SUCCESSFUL
-Total time: 4 seconds
+Total time: 10 seconds

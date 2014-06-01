@@ -7,6 +7,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.IOException;
 import java.util.*;
+import android.util.Log;
 
 public class Globals extends Application {
     int currentPage;
@@ -17,12 +18,30 @@ public class Globals extends Application {
     int[] numbers;
     // numbersは回答した番号
 
+    public ArrayList<String> getAllquestions() {
+        return questions;
+    }
+
+    public int[] getAllnumbers() {
+        return numbers;
+    }
+
     public int getNumbers() {
-        return numbers[currentPage];
+        int n = 0;
+        try{
+            n = numbers[currentPage];
+        } catch(ArrayIndexOutOfBoundsException e) {
+            Log.d("hogedom", "2");
+        }
+        return n;
     }
 
     public void setNumbers(int num) {
-        numbers[currentPage] = num;
+        try{
+            numbers[currentPage] = num;
+        } catch(ArrayIndexOutOfBoundsException e) {
+            Log.d("hogedom", "3");
+        }
     }
 
     public int getPage() {
@@ -38,7 +57,13 @@ public class Globals extends Application {
     }
 
     public String getQuestion() {
-        return questions.get(currentPage);
+        String s = new String();
+        try{
+            s = questions.get(currentPage);
+        } catch(ArrayIndexOutOfBoundsException e) {
+            Log.d("hogedom", "4");
+        }
+        return s;
     }
 
     public ArrayList<String> getAnswers() {
@@ -64,11 +89,7 @@ public class Globals extends Application {
             while ((next = reader.readNext()) != null) {
                 answers.add(next[0]);
             }
-            numbers = new int[answers.size()-1];
-            for (int i=0;i<numbers.length;i++) {
-                numbers[i] = -1;
-            }
-        } catch (IOException e) {
+       } catch (IOException e) {
             // error
         } finally {
             try {
@@ -87,6 +108,10 @@ public class Globals extends Application {
             CSVReader reader = new CSVReader(ireader,',','"',0);
             while ((next = reader.readNext()) != null) {
                 questions.add(next[0]);
+            }
+            numbers = new int[questions.size()];
+            for (int i=0;i<numbers.length;i++) {
+                numbers[i] = -1;
             }
             title = questions.get(0);
         } catch (IOException e) {
