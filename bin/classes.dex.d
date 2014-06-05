@@ -120,6 +120,10 @@
 /Users/shinya/Documents/workspace/org.question/bin/classes/org/dom/Confirmation$2.class \
 /Users/shinya/Documents/workspace/org.question/bin/classes/org/dom/Confirmation$3.class \
 /Users/shinya/Documents/workspace/org.question/bin/classes/org/dom/Confirmation.class \
+/Users/shinya/Documents/workspace/org.question/bin/classes/org/dom/FillOutActivity$1$1.class \
+/Users/shinya/Documents/workspace/org.question/bin/classes/org/dom/FillOutActivity$1$2.class \
+/Users/shinya/Documents/workspace/org.question/bin/classes/org/dom/FillOutActivity$1.class \
+/Users/shinya/Documents/workspace/org.question/bin/classes/org/dom/FillOutActivity.class \
 /Users/shinya/Documents/workspace/org.question/bin/classes/org/dom/Globals.class \
 /Users/shinya/Documents/workspace/org.question/bin/classes/org/dom/HeaderLayout.class \
 /Users/shinya/Documents/workspace/org.question/bin/classes/org/dom/MainActivity.class \

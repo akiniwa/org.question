@@ -30,6 +30,12 @@
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
         </activity>
-         <activity android:name="au.com.bytecode.opencsv"></activity>
+        <activity 
+            android:name=".FillOutActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+        </activity>
+        <activity android:name="au.com.bytecode.opencsv"></activity>
     </application>
 </manifest> 

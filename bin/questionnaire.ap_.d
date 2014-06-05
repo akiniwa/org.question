@@ -6,6 +6,7 @@
 /Users/shinya/Documents/workspace/org.question/res/drawable/button.png \
 /Users/shinya/Documents/workspace/org.question/res/drawable/shape.xml \
 /Users/shinya/Documents/workspace/org.question/res/layout/button_layout.xml \
+/Users/shinya/Documents/workspace/org.question/res/layout/fillout.xml \
 /Users/shinya/Documents/workspace/org.question/res/layout/header_layout.xml \
 /Users/shinya/Documents/workspace/org.question/res/layout/list.xml \
 /Users/shinya/Documents/workspace/org.question/res/layout/listview.xml \

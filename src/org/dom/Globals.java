@@ -14,9 +14,23 @@ public class Globals extends Application {
     String title;
     ArrayList<String> answers;
     ArrayList<String> questions;
-
     int[] numbers;
+    String name;
+    String date;
+    public void setDate(String d) {
+        date = d;
+    }
+    public String getDate() {
+        return date;
+    }
     // numbersは回答した番号
+    public void setName(String n) {
+        name = n;
+    }
+
+    public String getName() {
+        return name;
+    }
 
     public ArrayList<String> getAllquestions() {
         return questions;

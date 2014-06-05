@@ -1,8 +1,11 @@
-# view AndroidManifest.xml #generated:33
+# view AndroidManifest.xml #generated:39
 -keep class au.com.bytecode.opencsv { <init>(...); }
 
 # view AndroidManifest.xml #generated:27
 -keep class org.dom.Confirmation { <init>(...); }
+
+# view AndroidManifest.xml #generated:33
+-keep class org.dom.FillOutActivity { <init>(...); }
 
 # view AndroidManifest.xml #generated:10
 -keep class org.dom.Globals { <init>(...); }

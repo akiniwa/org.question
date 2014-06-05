@@ -16,7 +16,7 @@ STATUS=$(tail ${BUILD_LOG} | grep "${BUILD_SUCCESS}")
 if [ "x${STATUS}" != "x${BUILD_SUCCESS}" ]; then
   echo "[FAILED]"
   echo "Try \`cat ${BUILD_LOG}' for more info."
-  exit 1
+  #exit 1
 fi
 echo "[OK]"
 echo -ne "Installing application ... "
