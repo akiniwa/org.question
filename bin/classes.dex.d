@@ -118,6 +118,7 @@
 /Users/shinya/Documents/workspace/org.question/bin/classes/org/dom/ButtonLayout.class \
 /Users/shinya/Documents/workspace/org.question/bin/classes/org/dom/Confirmation$1.class \
 /Users/shinya/Documents/workspace/org.question/bin/classes/org/dom/Confirmation$2.class \
+/Users/shinya/Documents/workspace/org.question/bin/classes/org/dom/Confirmation$3$1.class \
 /Users/shinya/Documents/workspace/org.question/bin/classes/org/dom/Confirmation$3.class \
 /Users/shinya/Documents/workspace/org.question/bin/classes/org/dom/Confirmation.class \
 /Users/shinya/Documents/workspace/org.question/bin/classes/org/dom/FillOutActivity$1$1.class \

@@ -54,6 +54,7 @@ Buildfile: /Users/shinya/Documents/workspace/org.question/build.xml
      [echo] ----------
      [echo] Handling Resources...
      [aapt] Generating resource IDs...
+     [aapt]     (skipping file '.fillout.xml.swp' due to ANDROID_AAPT_IGNORE pattern '.*')
      [echo] ----------
      [echo] Handling BuildConfig class...
 [buildconfig] Generating BuildConfig class.
@@ -72,7 +73,7 @@ Buildfile: /Users/shinya/Documents/workspace/org.question/build.xml
       [dex] input: /Applications/adt-bundle-mac-x86_64/sdk/tools/support/annotations.jar
       [dex] Pre-Dexing /Applications/adt-bundle-mac-x86_64/sdk/tools/support/annotations.jar -> annotations-954990bd200f0ae9cfdf8ebe0c8a7ae0.jar
       [dex] Converting compiled files and external libraries into /Users/shinya/Documents/workspace/org.question/bin/classes.dex...
-       [dx] Merged dex A (138 defs/203.6KiB) with dex B (2 defs/1.1KiB). Result is 140 defs/252.5KiB. Took 0.3s
+       [dx] Merged dex A (142 defs/206.7KiB) with dex B (2 defs/1.1KiB). Result is 144 defs/256.2KiB. Took 0.3s
 
 -crunch:
    [crunch] Crunching PNG Files in source dir: /Users/shinya/Documents/workspace/org.question/res
@@ -83,6 +84,7 @@ Buildfile: /Users/shinya/Documents/workspace/org.question/build.xml
 
 -package-resources:
      [aapt] Creating full resource package...
+     [aapt]     (skipping file '.fillout.xml.swp' due to ANDROID_AAPT_IGNORE pattern '.*')
 
 -package:
 [apkbuilder] Current build type is different than previous build: forced apkbuilder run.
@@ -103,4 +105,4 @@ Buildfile: /Users/shinya/Documents/workspace/org.question/build.xml
 debug:
 
 BUILD SUCCESSFUL
-Total time: 11 seconds
+Total time: 10 seconds

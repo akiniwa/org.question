@@ -20,9 +20,6 @@ import android.widget.ListView;
 import android.app.ListActivity;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
-import java.util.Date;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 
 public class MainActivity extends ListActivity
 {
@@ -62,12 +59,7 @@ public class MainActivity extends ListActivity
     {
         super.onListItemClick(l, v, position, id);
 
-        DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
-        Date date = new Date();
-        globals.setDate(df.format(date));
-
         globals.nextPage();
-        //Intent intent = new Intent(MainActivity.this, SelectActivity.class);
         Intent intent = new Intent(MainActivity.this, FillOutActivity.class);
         startActivity(intent);
         overridePendingTransition(R.animator.slide_in_right, R.animator.slide_out_left);

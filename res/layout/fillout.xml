@@ -5,6 +5,7 @@
     android:orientation="vertical" >
 
     <LinearLayout
+        android:layout_marginTop="40sp"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20sp"
@@ -20,6 +21,7 @@
 
         <EditText
             android:id="@+id/editName"
+            android:lines="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.75"
@@ -41,19 +43,20 @@
             android:text="性別" />
 
         <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="fill_parent"
+            android:id="@+id/radioSex"
+            android:layout_weight="0.75"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.5"
             android:orientation="horizontal">
-            <RadioButton android:id="@+id/radio_pirates"
+            <RadioButton android:id="@+id/radioMale"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="pirates"
+                android:text="男性"
                 />
-            <RadioButton android:id="@+id/radio_ninjas"
+            <RadioButton android:id="@+id/radioFemale"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ninjas"
+                android:text="女性"
                 />
         </RadioGroup>
     </LinearLayout>

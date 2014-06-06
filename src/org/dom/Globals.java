@@ -17,19 +17,27 @@ public class Globals extends Application {
     int[] numbers;
     String name;
     String date;
+    String age;
+
     public void setDate(String d) {
-        date = d;
+        this.date = d;
     }
     public String getDate() {
-        return date;
+        return this.date;
     }
     // numbersは回答した番号
     public void setName(String n) {
-        name = n;
+        this.name = n;
     }
-
     public String getName() {
         return name;
+    }
+
+    public void setAge(String a) {
+        this.age = a;
+    }
+    public String getAge() {
+        return this.age;
     }
 
     public ArrayList<String> getAllquestions() {

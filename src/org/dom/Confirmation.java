@@ -11,7 +11,6 @@ import android.content.Intent;
 import android.util.Log;
 import android.widget.Toast;
 import android.graphics.Color;
-import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -20,14 +19,18 @@ import android.os.Environment;
 import java.io.FileFilter;
 import java.io.File;
 import java.io.PrintWriter;
+import android.content.Context;
 import java.io.FileOutputStream;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.lang.Integer;
+import android.app.AlertDialog;
+import android.view.View.OnClickListener;
 
 public class Confirmation extends Activity
 {
     Globals globals;
+    final Context context = this;
     private String[] items = { "a10", "a11", "a21", "b10" };
 
     @Override
@@ -41,6 +44,7 @@ public class Confirmation extends Activity
             parentLayout.addView(headerLayout);
 
             Button exitBtn = new Button(this);
+            exitBtn.setText("終了");
 
             globals = (Globals) this.getApplication();
 
@@ -97,6 +101,23 @@ public class Confirmation extends Activity
                                pw.println(su[s]+1);
                            }
                            pw.close();
+
+                           AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+                           alertDialogBuilder.setTitle("お疲れ様でした");
+                           alertDialogBuilder.setMessage("なにか画面をタッチしてください。");
+                           alertDialogBuilder.setPositiveButton("はい",new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog,int id) {
+                                    Intent intent = new Intent(Intent.ACTION_MAIN);
+                                    intent.addCategory(Intent.CATEGORY_HOME);
+                                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                    startActivity(intent);
+                               }
+                            });
+ 
+                        AlertDialog alertDialog = alertDialogBuilder.create();
+                        // show it
+                           alertDialog.show();
+
                        } catch (Exception e) {
                            Log.v("error_hoge", e.getMessage());
                        } finally {
