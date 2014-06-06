@@ -17,4 +17,5 @@
 /Users/shinya/Documents/workspace/org.question/res/layout/simple_list.xml \
 /Users/shinya/Documents/workspace/org.question/res/values/color.xml \
 /Users/shinya/Documents/workspace/org.question/res/values/strings.xml \
+/Users/shinya/Documents/workspace/org.question/bin/res/drawable/button.png \
 /Users/shinya/Documents/workspace/org.question/bin/AndroidManifest.xml \

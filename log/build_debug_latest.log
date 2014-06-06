@@ -54,7 +54,6 @@ Buildfile: /Users/shinya/Documents/workspace/org.question/build.xml
      [echo] ----------
      [echo] Handling Resources...
      [aapt] Generating resource IDs...
-     [aapt]     (skipping file '.fillout.xml.swp' due to ANDROID_AAPT_IGNORE pattern '.*')
      [echo] ----------
      [echo] Handling BuildConfig class...
 [buildconfig] Generating BuildConfig class.
@@ -84,7 +83,6 @@ Buildfile: /Users/shinya/Documents/workspace/org.question/build.xml
 
 -package-resources:
      [aapt] Creating full resource package...
-     [aapt]     (skipping file '.fillout.xml.swp' due to ANDROID_AAPT_IGNORE pattern '.*')
 
 -package:
 [apkbuilder] Current build type is different than previous build: forced apkbuilder run.

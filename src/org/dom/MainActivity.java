@@ -31,13 +31,16 @@ public class MainActivity extends ListActivity
         globals = (Globals) this.getApplication();
         globals.GlobalsAllInit();
     }
+    private void setGlobals(String filename) {
+        globals = (Globals) this.getApplication();
+        globals.GlobalsAllInit(filename);
+    }
 
     @Override
         public void onCreate(Bundle savedInstanceState)
         {
             super.onCreate(savedInstanceState);
             //setContentView(R.layout.main);
-            this.setGlobals();
 
             myList = new ArrayList<String>();   
 
@@ -46,6 +49,7 @@ public class MainActivity extends ListActivity
             FileFilter fileFilter = new WildcardFileFilter("*.csv");
             File[] files = dir.listFiles(fileFilter);
 
+            // *.csvファイルを表示
             for( int i=0; i< files.length; i++)
             {
                 myList.add( files[i].getName() );
@@ -58,6 +62,9 @@ public class MainActivity extends ListActivity
     protected void onListItemClick(ListView l, View v, int position, long id) 
     {
         super.onListItemClick(l, v, position, id);
+        // ここで、選択したファイル名をGlobalsに送り、ファイルから情報を取得する
+        // ファイル名、質問、質問文、選択項目
+        //this.setGlobals(v.getText());
 
         globals.nextPage();
         Intent intent = new Intent(MainActivity.this, FillOutActivity.class);

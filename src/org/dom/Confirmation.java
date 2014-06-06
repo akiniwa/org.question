@@ -89,7 +89,7 @@ public class Confirmation extends Activity
                 @Override
                 public void onClick(View v) {
                        File sdCard = Environment.getExternalStorageDirectory();
-                       File sd_dir = new File (sdCard.getAbsolutePath() + "/dir1/dir2");
+                       File sd_dir = new File (sdCard.getAbsolutePath() + "/questionnaire");
                        sd_dir.mkdirs();
                        try {
                            File file = new File(sd_dir, "filename");
@@ -97,8 +97,10 @@ public class Confirmation extends Activity
                            PrintWriter pw = new PrintWriter(f);
                            int s = 1;
                            int[] su = globals.getAllnumbers();
+                           ArrayList<String> questions = globals.getAllquestions();
+                           //ここでカンマ区切りのファイルを出力
                            for (s=1;s<su.length;s++) {
-                               pw.println(su[s]+1);
+                               pw.println(questions.get(s)+","+su[s]+1);
                            }
                            pw.close();
 
