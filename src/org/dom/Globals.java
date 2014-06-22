@@ -68,7 +68,8 @@ public class Globals extends Application {
     }
 
     public int getPage() {
-        return currentPage;
+        // ページは0から始まるけど、表記の問題上、+1する.
+        return currentPage+1;
     }
 
     public void nextPage() {
@@ -95,60 +96,9 @@ public class Globals extends Application {
 
     public int getTotalPage() {
         // 1行目はタイトルだから-1する
-        return questions.size() - 1;
+        return questions.size();
     }
-    public void GlobalsAllInit() {
-        currentPage = 0;
 
-        InputStream input = null;
-        String next[] = {};
-        questions = new ArrayList<String>();
-        answers = new ArrayList<String>();
-        try {
-            input = new FileInputStream("/sdcard/hoge.csv");
-            InputStreamReader ireader=new InputStreamReader(input, "UTF-8");
-            CSVReader reader = new CSVReader(ireader,',','"',0);
-            while ((next = reader.readNext()) != null) {
-                answers.add(next[0]);
-            }
-       } catch (IOException e) {
-            // error
-        } finally {
-            try {
-                if( input != null )
-                {
-                    input.close();
-                }
-            } catch (IOException e) {
-                // error
-            }
-        }
-
-        try {
-            input = new FileInputStream("/sdcard/questions.csv");
-            InputStreamReader ireader=new InputStreamReader(input, "UTF-8");
-            CSVReader reader = new CSVReader(ireader,',','"',0);
-            while ((next = reader.readNext()) != null) {
-                questions.add(next[0]);
-            }
-            numbers = new int[questions.size()];
-            for (int i=0;i<numbers.length;i++) {
-                numbers[i] = -1;
-            }
-            title = questions.get(0);
-        } catch (IOException e) {
-            // error
-        } finally {
-            try {
-                if( input != null )
-                {
-                    input.close();
-                }
-            } catch (IOException e) {
-                // error
-            }
-        }
-    }
     public void GlobalsAllInit(String filename) {
         // ファイル名、質問、質問文、選択項目
         currentPage = 0;
@@ -157,41 +107,24 @@ public class Globals extends Application {
         String next[] = {};
         questions = new ArrayList<String>();
         answers = new ArrayList<String>();
-        try {
-            input = new FileInputStream("/sdcard/hoge.csv");
-            InputStreamReader ireader=new InputStreamReader(input, "UTF-8");
-            CSVReader reader = new CSVReader(ireader,',','"',0);
-            while ((next = reader.readNext()) != null) {
-                answers.add(next[0]);
-            }
-       } catch (IOException e) {
-            // error
-        } finally {
-            try {
-                if( input != null )
-                {
-                    input.close();
-                }
-            } catch (IOException e) {
-                // error
-            }
-        }
 
         try {
-            input = new FileInputStream("/sdcard/questions.csv");
+            input = new FileInputStream("sdcard/question/"+filename);
             InputStreamReader ireader=new InputStreamReader(input, "UTF-8");
             CSVReader reader = new CSVReader(ireader,',','"',0);
             // 一行目は,カンマ区切りに読み込む.
-            firstline = reader.readNext();
-            for (col in firstline) {
+            String[] firstline = reader.readNext();
+            for (String col : firstline) {
+                Log.d("hogedom:col:", col);
                 answers.add(col);
             }
             // 二行目は,本文を読む.
-            secondline = reader.readNext();
+            String[] secondline = reader.readNext();
             content = secondline[0];
             // 三行目以降は,questionsに追加していく
             while ((next = reader.readNext()) != null) {
                 questions.add(next[0]);
+                Log.d("hogedom", next[0]);
             }
             numbers = new int[questions.size()];
             for (int i=0;i<numbers.length;i++) {

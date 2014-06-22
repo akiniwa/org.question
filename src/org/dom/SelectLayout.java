@@ -23,6 +23,7 @@ public class SelectLayout extends LinearLayout {
 
         this.globals = g;
         ArrayList<String> answers = globals.getAnswers();
+        Log.d("hoge SelectLayout", "7");
 
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.select_layout, this, true);
@@ -32,6 +33,7 @@ public class SelectLayout extends LinearLayout {
         textView.setText(globals.getPage() + ". " + globals.getQuestion());
         textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 30);
         textView.setTextColor(Color.rgb(20,20,20));
+        Log.d("hoge SelectLayout", "8");
 
         LinearLayout buttonsLayout = (LinearLayout)findViewById(R.id.select_button_layout);
         LinearLayout answersLayout = (LinearLayout)findViewById(R.id.select_answer_layout);
@@ -39,6 +41,7 @@ public class SelectLayout extends LinearLayout {
         /* buttons, answers */
         buttons = new Button[answers.size()];
         TextView[] answersView = new TextView[answers.size()];
+        Log.d("hoge SelectLayout", "9");
 
         int i = 0;
         for (i = 0; i < answers.size(); i++) {

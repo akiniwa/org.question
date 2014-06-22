@@ -27,10 +27,6 @@ public class MainActivity extends ListActivity
     private File file;
     private List<String> myList;
 
-    private void setGlobals() {
-        globals = (Globals) this.getApplication();
-        globals.GlobalsAllInit();
-    }
     private void setGlobals(String filename) {
         globals = (Globals) this.getApplication();
         globals.GlobalsAllInit(filename);
@@ -45,7 +41,8 @@ public class MainActivity extends ListActivity
             myList = new ArrayList<String>();   
 
             String root_sd = Environment.getExternalStorageDirectory().toString();
-            File dir = new File(root_sd);
+            //File dir = new File(root_sd);
+            File dir = new File(root_sd+"/question");
             FileFilter fileFilter = new WildcardFileFilter("*.csv");
             File[] files = dir.listFiles(fileFilter);
 
@@ -64,9 +61,10 @@ public class MainActivity extends ListActivity
         super.onListItemClick(l, v, position, id);
         // ここで、選択したファイル名をGlobalsに送り、ファイルから情報を取得する
         // ファイル名、質問、質問文、選択項目
-        //this.setGlobals(v.getText());
 
-        globals.nextPage();
+        this.setGlobals(((TextView)v).getText().toString());
+
+        //globals.nextPage();
         Intent intent = new Intent(MainActivity.this, FillOutActivity.class);
         startActivity(intent);
         overridePendingTransition(R.animator.slide_in_right, R.animator.slide_out_left);

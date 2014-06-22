@@ -80,6 +80,7 @@ public class SelectActivity extends Activity
         parentLayout.addView(headerLayout);
         parentLayout.addView(selectLayout);
         parentLayout.addView(buttonLayout);
+        Log.d("hoge SelectActivity", "6");
 
         this.setContentView(parentLayout);
     }
