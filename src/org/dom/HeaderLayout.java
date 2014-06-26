@@ -24,6 +24,7 @@ public class HeaderLayout extends LinearLayout {
         countView.setText(globals.getPage() + "/" + globals.getTotalPage());
         countView.setTextColor(Color.rgb(30,30,30));
     }
+
     public HeaderLayout(Context context) {
         super(context);
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);

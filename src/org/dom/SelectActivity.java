@@ -13,6 +13,7 @@ import android.widget.Toast;
 import android.graphics.Color;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.view.KeyEvent;
 
 public class SelectActivity extends Activity
 {
@@ -22,17 +23,22 @@ public class SelectActivity extends Activity
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        Log.v("hoge", "you can do it5");
 
         globals = (Globals) this.getApplication();
+        Log.v("hoge", "you can do it6ii");
 
         LinearLayout parentLayout = new LinearLayout(this);
         parentLayout.setBackgroundColor(0xDFA9DDEE);
         parentLayout.setOrientation(LinearLayout.VERTICAL);
-
+        Log.v("hoge", "you can do it6");
         // Add header, selectView, buttons to mainlayer
         HeaderLayout headerLayout = new HeaderLayout(this, globals);
+        Log.v("hoge", "you can do it7");
         SelectLayout selectLayout = new SelectLayout(this, globals);
+        Log.v("hoge", "you can do it8");
         ButtonLayout buttonLayout = new ButtonLayout(this);
+        Log.v("hoge", "you can do it9");
         
         buttonLayout.next_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,8 +86,25 @@ public class SelectActivity extends Activity
         parentLayout.addView(headerLayout);
         parentLayout.addView(selectLayout);
         parentLayout.addView(buttonLayout);
-        Log.d("hoge SelectActivity", "6");
+        Log.v("hoge", "you can do it7");
 
         this.setContentView(parentLayout);
+    }
+
+    @Override
+    public boolean dispatchKeyEvent(KeyEvent event) {
+        if (event.getAction()==KeyEvent.ACTION_DOWN) {
+            switch (event.getKeyCode()) {
+                case KeyEvent.KEYCODE_BACK:
+                    // ダイアログ表示など特定の処理を行いたい場合はここに記述
+                    // 親クラスのdispatchKeyEvent()を呼び出さずにtrueを返す
+                    AlertDialog alertDialog = new AlertDialog.Builder(SelectActivity.this).create();
+                    alertDialog.setTitle("戻るボタンは無効です。");
+                    alertDialog.setMessage("なにか画面をタッチしてください。");
+                    alertDialog.show();
+                    return true;
+            }
+        }
+        return super.dispatchKeyEvent(event);
     }
 }

@@ -127,6 +127,12 @@
 /Users/shinya/Documents/workspace/org.question/bin/classes/org/dom/FillOutActivity.class \
 /Users/shinya/Documents/workspace/org.question/bin/classes/org/dom/Globals.class \
 /Users/shinya/Documents/workspace/org.question/bin/classes/org/dom/HeaderLayout.class \
+/Users/shinya/Documents/workspace/org.question/bin/classes/org/dom/Item.class \
+/Users/shinya/Documents/workspace/org.question/bin/classes/org/dom/ListAdapter$1.class \
+/Users/shinya/Documents/workspace/org.question/bin/classes/org/dom/ListAdapter.class \
+/Users/shinya/Documents/workspace/org.question/bin/classes/org/dom/ListLinearLayout.class \
+/Users/shinya/Documents/workspace/org.question/bin/classes/org/dom/MainActivity$1$1.class \
+/Users/shinya/Documents/workspace/org.question/bin/classes/org/dom/MainActivity$1.class \
 /Users/shinya/Documents/workspace/org.question/bin/classes/org/dom/MainActivity.class \
 /Users/shinya/Documents/workspace/org.question/bin/classes/org/dom/R$animator.class \
 /Users/shinya/Documents/workspace/org.question/bin/classes/org/dom/R$attr.class \

@@ -85,7 +85,6 @@ public class Globals extends Application {
         try{
             s = questions.get(currentPage);
         } catch(ArrayIndexOutOfBoundsException e) {
-            Log.d("hogedom", "4");
         }
         return s;
     }
@@ -109,13 +108,12 @@ public class Globals extends Application {
         answers = new ArrayList<String>();
 
         try {
-            input = new FileInputStream("sdcard/question/"+filename);
+            input = new FileInputStream("sdcard/questions/"+filename);
             InputStreamReader ireader=new InputStreamReader(input, "UTF-8");
             CSVReader reader = new CSVReader(ireader,',','"',0);
             // 一行目は,カンマ区切りに読み込む.
             String[] firstline = reader.readNext();
             for (String col : firstline) {
-                Log.d("hogedom:col:", col);
                 answers.add(col);
             }
             // 二行目は,本文を読む.
@@ -124,7 +122,6 @@ public class Globals extends Application {
             // 三行目以降は,questionsに追加していく
             while ((next = reader.readNext()) != null) {
                 questions.add(next[0]);
-                Log.d("hogedom", next[0]);
             }
             numbers = new int[questions.size()];
             for (int i=0;i<numbers.length;i++) {

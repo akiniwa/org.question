@@ -17,6 +17,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import android.widget.RadioGroup;
 import android.widget.RadioButton;
+import android.util.Log;
 
 public class FillOutActivity extends Activity
 {
